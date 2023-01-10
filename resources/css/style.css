@@ -990,7 +990,13 @@ ul.portfolio-img li {
     margin-left: 40px;
 }
 
+.car-img img {
+	width: 300px; /* Ширина в процентах */
+}
 
+.logo img {
+	width: 150px
+}
 
 
 /* ----- Media queries ----- */

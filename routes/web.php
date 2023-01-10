@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('cars');
+    return view('home');
 })->middleware('auth');
 
 Auth::routes();
