@@ -60,6 +60,20 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        
+                        <div class="row mb-3">
+                            <label for="grade" class="col-md-4 col-form-label text-md-end">{{ __('Grade') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="grade" type="number" class="form-control @error('grade') is-invalid @enderror" name="grade" required autocomplete="grade">
+
+                                @error('grade')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

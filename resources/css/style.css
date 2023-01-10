@@ -13,7 +13,7 @@ body {
     background: #fff;
     text-align: center;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    color: #888;
+    color: #777;
     font-size: 12px;
 }
 
@@ -266,7 +266,7 @@ strong { font-weight: bold; }
     margin-top: 40px;
     padding-bottom: 20px;
     background: #f8f8f8;
-    border-bottom: 2px solid #9d426b;
+    border-bottom: 4px solid #9d426b;
 }
 
 .portfolio .work:hover img {
@@ -998,6 +998,20 @@ ul.portfolio-img li {
 	width: 150px
 }
 
+.logo {
+    padding: 25px;
+}
+
+.datapicker {
+    max-width: 300px;
+    margin: auto;
+    margin-top: 10px;
+    padding-left: 25px;
+}
+
+.presentation {
+    margin: auto;
+}
 
 /* ----- Media queries ----- */
 
@@ -1065,11 +1079,6 @@ ul.portfolio-img li {
     .call-to-action-text .ca-button {
         margin-top: 10px;
     }
-    
-    .logo {
-        padding: 25px;
-    }
-
 }
 
 @media (max-width: 767px) {

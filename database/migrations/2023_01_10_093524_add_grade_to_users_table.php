@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_cars', function (Blueprint $table) {
-            $table->foreignId('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreignId('car_id');
-            $table->foreign('car_id')->references('id')->on('cars');
-            $table->time('busy_time');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->addColumn('integer', 'grade', [3]);
         });
     }
 
@@ -30,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_cars');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('grade');
+        });
     }
 };
