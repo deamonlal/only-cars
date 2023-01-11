@@ -12,7 +12,12 @@ class CarController extends Controller
     public function index(Request $request) {
         $date = (is_null($request->date)) ? date('d.m.y') : $request->date;
         $user = Auth::user();
-        $availableCars = CarService::getAvailableCar($date, $user);
+		$filter = [
+			'grade' => $request->grade,
+			'model' => $request->model
+		];
+		
+        $availableCars = CarService::getAvailableCar($date, $user, $filter);
         return view('cars', [
             'cars' => $availableCars, 
             'date' => $date

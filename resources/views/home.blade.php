@@ -23,6 +23,10 @@
                     </span>
                     @enderror
                 </div>
+				<div class="row">
+					<p>Фильтрация по уровню комфорта: <input type="number" name="grade" /> </p>
+					<p>Фильтрация по названию модели: <input type="text" name="model"/> </p>
+				</div>
             </div>
         </div>
 

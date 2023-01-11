@@ -19,6 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('get')->group(function () {
-    Route::get('available-cars', [CarController::class, 'getAvailableCar'])->middleware('auth.basic');
+    Route::get('available-cars', [CarController::class, 'index'])->middleware('auth.basic');
 });
 

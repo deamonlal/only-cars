@@ -12,11 +12,14 @@ class CarController extends \App\Http\Controllers\Controller {
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getAvailableCar(Request $request) {
+    public function index(Request $request) {
         $date = (is_null($request->date)) ? date('d.m.y') : $request->date;
         $user = Auth::user();
-        $availableCars = CarService::getAvailableCar($date, $user);
+		$filter = [
+			'grade' => $request->grade,
+			'model' => $request->model
+		];
+        $availableCars = CarService::getAvailableCar($date, $user, $filter);
         return $availableCars;
     }
-
 }

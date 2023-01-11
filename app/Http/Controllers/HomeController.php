@@ -25,7 +25,11 @@ class HomeController extends Controller {
         $validated = $request->validate([
             'date' => 'required',
         ]);
-        return redirect()->route('cars', ['date' => $request->date]);
+        return redirect()->route('cars', [
+			'date' => $request->date,
+			'grade' => $request->grade,
+			'model' => $request->model
+			]);
     }
 
 }
