@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('validator', [HomeController::class, 'validator'])->name('validator')->middleware('auth');
+Route::get('cars', [CarController::class, 'index'])->name('cars')->middleware('auth');
+

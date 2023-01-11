@@ -85,17 +85,44 @@
             <main class="py-4">
                 @yield('content')
             </main>
+
+
+            <footer>
+                <div class="container">
+                    <div class="span__row">
+                        <div class="widget span3">
+                            <h4>About Us</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                        </div>
+                        <div class="widget span3">
+                            <h4>Contact Us</h4>
+                            <p> Saint-Petersberg</p>
+                            <p> Phone: +7 999 12 34 567</p>
+                            <p> Email: <a href="">somebeautiful@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="footer-border"></div>
+                    <div class="row">
+                        <div class="social span8">
+                            <a class="facebook" href=""></a>
+                            <a class="dribbble" href=""></a>
+                            <a class="twitter" href=""></a>
+                            <a class="pinterest" href=""></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript">
+                                               $(function () {
+                                                   $('#datetimepicker').datetimepicker({
+                                                       format: 'DD.MM.YY',
+                                                   });
+                                               });
+        </script>
     </body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
-    <script type="text/javascript">
-        $(function() {
-           $('#datetimepicker').datetimepicker({
-               format:'DD.MM.YY',
-           });
-        });
-    </script>
 </html>
