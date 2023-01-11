@@ -3,6 +3,10 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\DB;
+use App\Models\Car;
+use App\Models\User;
+use App\Models\UserCar;
+use App\Models\Driver;
 
 class CarService
 {
