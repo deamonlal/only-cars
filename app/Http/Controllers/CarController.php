@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Services\CarService;
+use App\Models\UserCar;
 
 class CarController extends Controller
 {
@@ -12,6 +13,19 @@ class CarController extends Controller
         $date = (is_null($request->date)) ? date('d.m.y') : $request->date;
         $user = Auth::user();
         $availableCars = CarService::getAvailableCar($date, $user);
-        return view('cars', ['cars' => $availableCars]);
+        return view('cars', [
+            'cars' => $availableCars, 
+            'date' => $date
+            ]);
+    }
+    
+    public function reserve(Request $request) {
+        $user = Auth::user();
+        $userCar = new UserCar();
+        $userCar->car_id = $request->car_id;
+        $userCar->user_id = $user->id;
+        $userCar->busy_time = $request->date;
+        $userCar->save();
+        return view('reserve');
     }
 }

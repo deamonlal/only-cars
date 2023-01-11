@@ -16,8 +16,11 @@ use App\Http\Controllers\CarController;
 */
 
 Auth::routes();
+Route::middleware(['auth'])->group(function() {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('validator', [HomeController::class, 'validator'])->name('validator');
+    Route::get('cars', [CarController::class, 'index'])->name('cars');
+    Route::get('reserve', [CarController::class, 'reserve'])->name('reserve');
+});
 
-Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('auth');
-Route::get('validator', [HomeController::class, 'validator'])->name('validator')->middleware('auth');
-Route::get('cars', [CarController::class, 'index'])->name('cars')->middleware('auth');
 

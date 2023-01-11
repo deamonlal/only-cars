@@ -1013,6 +1013,10 @@ ul.portfolio-img li {
     margin: auto;
 }
 
+.center {
+    margin: auto;
+}
+
 /* ----- Media queries ----- */
 
 @media (min-width: 980px) and (max-width: 1200px) {
