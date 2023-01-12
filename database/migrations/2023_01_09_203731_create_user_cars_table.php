@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreignId('car_id');
             $table->foreign('car_id')->references('id')->on('cars');
-            $table->time('busy_time');
+            $table->string('busy_time');
             $table->timestamps();
         });
     }
