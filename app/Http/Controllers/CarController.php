@@ -7,23 +7,23 @@ use Illuminate\Support\Facades\Auth;
 use App\Services\CarService;
 use App\Models\UserCar;
 
-class CarController extends Controller
-{
+class CarController extends Controller {
+
     public function index(Request $request) {
         $date = (is_null($request->date)) ? date('d.m.y') : $request->date;
-        $user = Auth::user();
-		$filter = [
-			'grade' => $request->grade,
-			'model' => $request->model
-		];
-		
+        $user = Auth::user()->name;
+        $filter = [
+            'grade' => $request->grade,
+            'model' => $request->model
+        ];
+
         $availableCars = CarService::getAvailableCar($date, $user, $filter);
         return view('cars', [
-            'cars' => $availableCars, 
+            'cars' => $availableCars,
             'date' => $date
-            ]);
+        ]);
     }
-    
+
     public function reserve(Request $request) {
         $user = Auth::user();
         $userCar = new UserCar();
@@ -33,4 +33,5 @@ class CarController extends Controller
         $userCar->save();
         return view('reserve');
     }
+
 }

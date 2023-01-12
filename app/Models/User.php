@@ -8,9 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
-{
-    use HasApiTokens, HasFactory, Notifiable;
+class User extends Authenticatable {
+
+    use HasApiTokens,
+        HasFactory,
+        Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -42,12 +44,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-	
-	/**
-	 * get user car relation
-	 * @return type
-	 */
-	public function userCar() {
-		return $this->hasMany(UserCar::class);
-	}
+
+    /**
+     * get user car relation
+     * @return type
+     */
+    public function userCars() {
+        return $this->hasMany(UserCar::class);
+    }
+
+    public function cars() {
+        return $this->hasManyThrough(Car::class, UserCar::class, 'car_id', 'id', 'id');
+    }
+
 }

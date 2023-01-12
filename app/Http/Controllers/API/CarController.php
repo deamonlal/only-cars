@@ -14,7 +14,7 @@ class CarController extends \App\Http\Controllers\Controller {
      */
     public function index(Request $request) {
         $date = (is_null($request->date)) ? date('d.m.y') : $request->date;
-        $user = Auth::user();
+        $user = Auth::user()->name;
 		$filter = [
 			'grade' => $request->grade,
 			'model' => $request->model
